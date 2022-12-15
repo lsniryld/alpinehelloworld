@@ -43,7 +43,7 @@ pipeline{
 			steps {
 				script{
 					sh '''
-					curl http://127.17.0.1:${PORT_EXPOSED} | grep -q "hello world"
+					curl $STG_APP_ENDPOINT:${PORT_EXPOSED} | grep -q "hello world"
 					'''
 				}
 			}
