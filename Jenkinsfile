@@ -43,7 +43,7 @@ pipeline{
 			steps {
 				script{
 					sh '''
-					curl $STG_APP_ENDPOINT | grep -q "hello world"
+					curl $STG_APP_ENDPOINT | grep -q "Jenkins"
 					'''
 				}
 			}
