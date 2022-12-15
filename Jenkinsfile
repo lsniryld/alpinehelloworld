@@ -6,10 +6,10 @@ pipeline{
     	PRODUCTION = "niry-production"
 		ID_DOCKER = "${ID_DOCKER_PARAMS}"
 		APP_NAME = "nini"
-		STG_API_ENDPOINT = "http://ip10-0-2-3-ced1q2gj3e60g67j2o00-1993.direct.docker.labs.eazytraining.fr/"
-		STG_APP_ENDPOINT = "http://ip10-0-2-3-ced1q2gj3e60g67j2o00-80.direct.docker.labs.eazytraining.fr/"
-		PROD_API_ENDPOINT = "http://ip10-0-2-4-ced1q2gj3e60g67j2o00-1993.direct.docker.labs.eazytraining.fr/"
-		PROD_APP_ENDPOINT = "http://ip10-0-2-4-ced1q2gj3e60g67j2o00-80.direct.docker.labs.eazytraining.fr/"
+		STG_API_ENDPOINT = "http://ip10-0-3-4-cedmof4iqmmgg4teoer0-1993.direct.docker.labs.eazytraining.fr/"
+		STG_APP_ENDPOINT = "http://ip10-0-3-4-cedmof4iqmmgg4teoer0-80.direct.docker.labs.eazytraining.fr/"
+		PROD_API_ENDPOINT = "http://ip10-0-3-4-cedmof4iqmmgg4teoer0-1993.direct.docker.labs.eazytraining.fr/"
+		PROD_APP_ENDPOINT = "http://ip10-0-3-4-cedmof4iqmmgg4teoer0-80.direct.docker.labs.eazytraining.fr/"
 		INTERNAL_PORT = "5000"
 		EXTERNAL_PORT = "${PORT_EXPOSED}"
 		CONTAINER_IMAGE = "${ID_DOCKER}/$IMAGE_NAME:$IMAGE_TAG"
@@ -73,7 +73,7 @@ pipeline{
              	}
           	}
         }   
-		stage('STAGING - Deploy app'){
+		stage('STAGING - Deploy app'){	
 			when {
 				expression { GIT_BRANCH == 'origin/master' }
 			}
@@ -88,6 +88,6 @@ pipeline{
 					"""
 				}
 			}
-	}
+		}
   }
 }
