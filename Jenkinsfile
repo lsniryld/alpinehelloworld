@@ -7,7 +7,7 @@ pipeline{
 		ID_DOCKER = "${ID_DOCKER_PARAMS}"
 		APP_NAME = "nini"
 		STG_API_ENDPOINT = "http://ip10-0-3-4-cedmof4iqmmgg4teoer0-1993.direct.docker.labs.eazytraining.fr/"
-		STG_APP_ENDPOINT = "http://ip10-0-3-4-cedmof4iqmmgg4teoer0-80.direct.docker.labs.eazytraining.fr/"
+		STG_APP_ENDPOINT = "http://ip10-0-3-3-cedmof4iqmmgg4teoer0-80.direct.docker.labs.eazytraining.fr/"
 		PROD_API_ENDPOINT = "http://ip10-0-3-4-cedmof4iqmmgg4teoer0-1993.direct.docker.labs.eazytraining.fr/"
 		PROD_APP_ENDPOINT = "http://ip10-0-3-4-cedmof4iqmmgg4teoer0-80.direct.docker.labs.eazytraining.fr/"
 		INTERNAL_PORT = "5000"
@@ -43,7 +43,7 @@ pipeline{
 			steps {
 				script{
 					sh '''
-					curl $STG_APP_ENDPOINT | grep -q "Jenkins"
+					curl $STG_APP_ENDPOINT | grep -q "Hello"
 					'''
 				}
 			}
